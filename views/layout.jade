@@ -1,7 +1,26 @@
 doctype html
-html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+head
+	meta(charset='utf-8')
+	title Sign in · Squared BJJ
+	meta(name='viewport', content='width=device-width, initial-scale=1.0')
+	meta(name='description', content='')
+	meta(name='author', content='')
+	link(rel='stylesheet', href='bower_components/bootstrap/dist/css/bootstrap.css')
+	link(rel='stylesheet', href='stylesheets/style.css')
+	link(href='/css/bootstrap-responsive.css', rel='stylesheet')
+	link(rel='apple-touch-icon-precomposed', sizes='144x144', href='/ico/apple-touch-icon-144-precomposed.png')
+	link(rel='apple-touch-icon-precomposed', sizes='114x114', href='/ico/apple-touch-icon-114-precomposed.png')
+	link(rel='apple-touch-icon-precomposed', sizes='72x72', href='/ico/apple-touch-icon-72-precomposed.png')
+	link(rel='apple-touch-icon-precomposed', href='/ico/apple-touch-icon-57-precomposed.png')
+	link(rel='shortcut icon', href='/ico/favicon.png')
+body
+	.container
+		form.logo-space
+		form.form-signin
+			h2.form-signin-heading(style='text-align: center') Sign in
+			input.input-block-level(type='text', placeholder='Email address')
+			input.input-block-level(type='password', placeholder='Password', style='margin-right:3px;')
+			label.checkbox
+			input(type='checkbox', value='remember-me')
+			button.btn.btn-large.btn-dark(type='submit') Sign in
+			a(class='sign-up-text', href='/sign-up').sign-up-text Not a registered user? Sign up
