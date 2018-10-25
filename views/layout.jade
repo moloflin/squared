@@ -1,3 +1,10 @@
+style(type='text/css').
+	.cent{
+	text-align: center;
+	}
+	.pad{
+		padding-top: 15px;
+	}
 doctype html
 head
 	meta(charset='utf-8')
@@ -14,13 +21,11 @@ head
 	link(rel='apple-touch-icon-precomposed', href='/ico/apple-touch-icon-57-precomposed.png')
 	link(rel='shortcut icon', href='/pics/squared.png')
 body
-	.container
+	.container.cent
 		form.logo-space
 		form.form-signin
 			h2.form-signin-heading(style='text-align: center') Sign in
 			input.input-block-level(type='text', placeholder='Email address')
 			input.input-block-level(type='password', placeholder='Password', style='margin-right:3px;')
-			label.checkbox
-			input(type='checkbox', value='remember-me')
-			button.btn.btn-large.btn-dark(type='submit') Sign in
-			a(class='sign-up-text', href='/sign-up').sign-up-text Not a registered user? Sign up
+			button.btn.btn-large.btn-dark.pad(type='submit') Sign in
+			h6.pad Not a registered user? <a href="https://www.linkedin.com/in/kevin-middleton/"  target="_blank">  Sign up
