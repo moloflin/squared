@@ -34,6 +34,21 @@ body {
 	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
 	box-shadow: 0 1px 2px rgba(0,0,0,.05);
 	}
+
+.form-register {
+	max-width: 700px;
+	padding: 19px 29px 29px;
+	margin: 0 auto 20px;
+	background-color: #fff;
+	border: 1px solid #e5e5e5;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+	box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
 	margin-bottom: 10px;
@@ -50,6 +65,15 @@ body {
 	margin: 5px;
 	font-size: 10px;
 }
+
+input.form-control {
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.cent {
+	text-align: center;
+	}
 
 a {
   color: #BF3228;
