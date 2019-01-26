@@ -7,25 +7,6 @@ const Client = require('pg');
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Squared BJJ' });
   
-  const pool = new Pool({
-	  user: 'mike',
-	  host: '142.93.73.235',
-	  database: 'squared',
-	  password: 'poopmike',
-	  port: 5432,
-  })
-  console.log('here!')
-  pool.query('SELECT NOW()', (err, res) => {
-  	console.log(err, res)
-  	console.log('Processing user data!')
-  	for (var i = 0; i <= res.rowCount; i++) {
-  		console.log(res.fields[i].id)
-  		console.log(res.fields[i].name)
-  		console.log(res.fields[i].email)
-  	}
-  pool.end()
-  })
-
   const client = new Client({
 	  user: 'mike',
 	  host: '142.93.73.235',
@@ -37,8 +18,14 @@ router.get('/', function(req, res, next) {
 
   client.query('SELECT NOW()', (err, res) => {
   	console.log(err, res)
+    console.log('Processing user data!')
+    for (var i = 0; i <= res.rowCount; i++) {
+      console.log(res.fields[i].id)
+      console.log(res.fields[i].name)
+      console.log(res.fields[i].email)
+    }
   client.end()
-  res.render('index', {users: res.rows})
+  /*res.render('index', {users: res.rows})*/
   })
  });
 
