@@ -7,3 +7,5 @@ var router = express.Router();
 router.get('/register', function(req, res, next) {
   res.render('register', { title: 'Squared BJJ' });
 });
+
+module.exports = router;
