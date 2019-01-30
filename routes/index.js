@@ -11,7 +11,7 @@ const client = new Client({
   password: "poopmike",
   host: "142.93.73.235",
   port: 5432,
-  database: "squared",
+  database: "squared"
 })
 client.connect()
 .then(() => console.log("Connected to DB successfully!"))
