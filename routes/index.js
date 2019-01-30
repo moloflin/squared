@@ -3,7 +3,7 @@ var router = express.Router();
 /*const Pool = require('pg');*/
 
 
-const Client = require('pg');
+const {Client} = require('pg');
 
 /*Try DB connect*/  
 const client = new Client({
