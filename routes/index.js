@@ -1,36 +1,26 @@
 var express = require('express');
 var router = express.Router();
-const Pool = require('pg');
+/*const Pool = require('pg');*/
+
+
 const Client = require('pg');
+
+/*Try DB connect*/  
+const client = new Client({
+  user: "mike",
+  password: "poopmike",
+  host: "142.93.73.235",
+  port: 5432,
+  database: "squared",
+})
+client.connect()
+.then(() => console.log("Connected to DB successfully!"))
+.catch(e => console.log)
+.finally(() => client.end())
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Squared BJJ' });
-  
-  const client = new Client({
-	  user: 'mike',
-	  host: '142.93.73.235',
-	  database: 'squared',
-	  password: 'poopmike',
-	  port: 5432,
-  })
-  client.connect()
-
-  client.query('SELECT NOW()', (err, res) => {
-  	console.log(err, res)
-    console.log('Processing user data!')
-    for (var i = 0; i <= res.rowCount; i++) {
-      console.log(res.fields[i].id)
-      console.log(res.fields[i].name)
-      console.log(res.fields[i].email)
-    }
-  client.end()
-  /*res.render('index', {users: res.rows})*/
-  })
  });
 
-/* GET register page. */
-router.get('/register', function(req, res, next) {
-  res.render('register', { title: 'Squared BJJ' });
-});
 module.exports = router;
