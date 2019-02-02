@@ -16,6 +16,8 @@ const client = new Client({
 client.connect()
 .then(() => console.log("Connected to DB successfully!"))
 .catch(e => console.log)
+/* potential trash */
+.then(() => console.log(client.query("SELECTNOW()")))
 .finally(() => client.end())
 
 /* GET home page. */
