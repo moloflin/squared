@@ -12,5 +12,10 @@
     "http-errors": "~1.6.2",
     "jade": "~1.11.0",
     "morgan": "~1.9.0"
-  }
+  },
+  //FOR USE WITH HEROKU ONLY
+  "engines": {
+    "node": "8.5.0",
+    "npm": "5.3.0"
+  },
 }
