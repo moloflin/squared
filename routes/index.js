@@ -9,7 +9,7 @@ const {Client} = require('pg');
 const client = new Client({
   user: "mike",
   password: "poopmike",
-  host: "142.93.73.235",
+  host: "Michaels-MacBook-Air.local",
   port: 5432,
   database: "squared"
 })
