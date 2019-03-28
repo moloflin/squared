@@ -28,8 +28,15 @@ function getInfo(){
 			console.log(err);
 			return;
 		}
-		req.query("SELECT * FROM info");
-		console.log("Success!")
+		req.query("SELECT * FROM info", function (err, recordset) {
+			if (err){
+				console.log(err);
+			}
+			else{
+				console.log(recordset);
+			}
+			conn.close();
+		});
 	});
 }
 
