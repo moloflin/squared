@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 const sql = require('mssql');
 
-/*Try DB connect*/  
+/*DB Connecton info*/  
 var dbConfig = {
 	server: "den1.mssql8.gear.host",
 	database: "squared",
@@ -11,14 +11,7 @@ var dbConfig = {
 	port: 1433
 }
 
-/*
-async () => {
-	try {
-		await sql.connect(dbConfig)
-		const result = await sql.query('SELECT * FROM info')
-	}
-}
-*/
+/*Try DB Connection*/
 function getInfo(){
 	var conn = new sql.ConnectionPool(dbConfig);
 	var req = new sql.Request(conn);
