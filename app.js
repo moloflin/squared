@@ -22,7 +22,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/', registerRouter);
+app.use('/register', registerRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
@@ -40,5 +40,25 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+const sql = require('mssql');
+const dbConnect = require('./db/database');
+require('dotenv').config();
+
+var conn = new sql.ConnectionPool(dbConnect.MSSQLconnection);
+
+conn.connect(function (err) {
+		if (err){
+			console.log(err);
+			return;
+		}
+		else {
+			console.log("DB Connection successful!")
+		}
+});
+
+
+
+
 
 module.exports = app;
